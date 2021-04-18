@@ -1,0 +1,5 @@
+;1devolo;2devolo;33;437,5
+;1azerty;2azerty;3x;4x
+;1qwerty;2swerty;3x;4x
+;1zqsdae;2zqsdae;3x;4x
+

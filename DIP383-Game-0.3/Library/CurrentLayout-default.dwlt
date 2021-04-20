@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1366
     height: 685
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 342}
   m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
-  controlID: 85
+  controlID: 60
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
-  controlID: 86
+  controlID: 61
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 87
+  controlID: 62
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -351,14 +351,15 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\macha\Desktop\DIP383-Project\DIP383-Game-0.3
+  m_LastProjectPath: C:\Users\macha\Matthieu Chambrion Dropbox\Matthieu Chambrion\Mon
+    PC (DESKTOP-NHQQKIA)\Desktop\DIP383-Project\DIP383-Game-0.3
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: d8410000
     m_LastClickedID: 16856
-    m_ExpandedIDs: 00000000d841000000ca9a3b
+    m_ExpandedIDs: 00000000d8410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -507,9 +508,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 00120000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 40fbffff
+      m_ExpandedIDs: 74f9ffff8cf9ffff40faffff40fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -569,9 +570,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 870.9017, y: 478.4242, z: -3916.598}
+    m_Target: {x: 706.4839, y: 405.91135, z: -4068.8865}
     speed: 2
-    m_Value: {x: 870.9017, y: 478.4242, z: -3916.598}
+    m_Value: {x: 706.4839, y: 405.91135, z: -4068.8865}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -622,9 +623,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 474.067
+    m_Target: 387.35324
     speed: 2
-    m_Value: 474.067
+    m_Value: 387.35324
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -715,23 +716,23 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 21
+      y: 0
       width: 884
-      height: 318
-    m_Scale: {x: 0.4140625, y: 0.4140625}
-    m_Translation: {x: 442, y: 159}
+      height: 339
+    m_Scale: {x: 0.44140625, y: 0.44140625}
+    m_Translation: {x: 442, y: 169.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1067.4717
+      x: -1001.34515
       y: -384
-      width: 2134.9434
+      width: 2002.6903
       height: 768
     m_MinimalGUI: 1
-  m_defaultScale: 0.4140625
+  m_defaultScale: 0.44140625
   m_LastWindowPixelSize: {x: 884, y: 339}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1

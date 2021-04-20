@@ -35,16 +35,29 @@ public class GameControl : MonoBehaviour
     private float accuracy;
 
     // Data location
-    private string datalocation = @"C:\Users\macha\Desktop\DIP383-Project\unityData\data.txt";
+    private string datalocation = @"C:\Users\macha\Matthieu Chambrion Dropbox\Matthieu Chambrion\Mon PC (DESKTOP-NHQQKIA)\Desktop\DIP383-Project\unityData\data.txt";
 
     // Data online
-    private string url = "https://raw.githubusercontent.com/Mat-cell/DIP383-Project/main/unityData/data.txt";
+    private string url = "https://raw.githubusercontent.com/Devoloo/DIP383-Project/main/unityData/data.txt";
+
+    // Data in string online (github public)
+    private string githubdata;
+    string[] data;
 
     [System.Obsolete]
     private IEnumerator Extract()
     {
-        WWW www = new WWW(url);
-        yield return www;
+        WWW github = new WWW(url);
+        yield return github;
+        githubdata = github.text;
+    }
+
+    private void stringToChain()
+    {
+        foreach (char c in githubdata)
+        {
+            //
+        }
     }
 
     // Player data
@@ -164,11 +177,11 @@ public class GameControl : MonoBehaviour
         for (pos = 0; pos < dataSheet.Length; pos++)
         {
             line = dataSheet[pos];
-            if (line.Contains(";1" + username + ";2" + password + ";3"))
+            if (line.Contains("%USERNAME%" + username + "%PASSWORD%" + password + "%GAMES%"))
             {
                 // game value
-                int gamepos1 = line.IndexOf(";3") + ";3".Length;
-                int gamepos2 = line.LastIndexOf(";4");
+                int gamepos1 = line.IndexOf("%GAMES%") + "%GAMES%".Length;
+                int gamepos2 = line.LastIndexOf("%ACCURACY%");
                 string gamevalueString = line.Substring(gamepos1, gamepos2 - gamepos1);
                 int gamevalue;
                 // check if the value is not x
@@ -178,8 +191,9 @@ public class GameControl : MonoBehaviour
                     gamevalue = System.Int16.Parse(gamevalueString);
 
                 // accuracy value
-                int accuracypos1 = line.IndexOf(";4") + ";4".Length;
-                string accuracyvalueString = line.Substring(accuracypos1);
+                int accuracypos1 = line.IndexOf("%ACCURACY%") + "%ACCURACY%".Length;
+                int accuracypos2 = line.IndexOf("/");
+                string accuracyvalueString = line.Substring(accuracypos1, accuracypos2 - accuracypos1);
                 int accuracyvalue;
                 // check if the value is not x
                 if (accuracyvalueString == "x")
@@ -188,7 +202,7 @@ public class GameControl : MonoBehaviour
                     accuracyvalue = System.Int16.Parse(accuracyvalueString);
                 
                 // new data
-                line = ";1" + username + ";2" + password + ";3" + (gamevalue + 1) + ";4" + ((accuracyvalue + accuracy) / 2);
+                line = "%USERNAME%" + username + "%PASSWORD%" + password + "%GAMES%" + (gamevalue + 1) + "%ACCURACY%" + ((accuracyvalue + accuracy) / 2) + "/";
                 break;
             }
         }
@@ -221,7 +235,7 @@ public class GameControl : MonoBehaviour
             numberdata--;
 
             // username exist and password is good
-            if (s.Contains(";1" + usernamevalue + ";2") && s.Contains(";2" + passwordvalue + ";3"))
+            if (s.Contains("%USERNAME%" + usernamevalue + "%PASSWORD%") && s.Contains("%PASSWORD%" + passwordvalue + "%GAMES%"))
             {
                 //print("username+password good");
 
@@ -240,14 +254,14 @@ public class GameControl : MonoBehaviour
             }
             // username exist but password is not good
             // so we continue search
-            if (s.Contains(";1" + usernamevalue + ";2") && !s.Contains(";2" + passwordvalue + ";3"))
+            if (s.Contains("%USERNAME%" + usernamevalue + "%PASSWORD%") && !s.Contains("PASSWORD" + passwordvalue + "%GAMES%"))
             {
                 // print("username good but password not");
                 continue;
             }
             // username doesn't exist
             // so we continue search
-            if (!s.Contains(";1" + usernamevalue + ";2"))
+            if (!s.Contains("%USERNAME%" + usernamevalue + "%PASSWORD%"))
             {
                 // print("username not good");
                 continue;
@@ -273,7 +287,7 @@ public class GameControl : MonoBehaviour
         foreach (string s in actualdata)
         {
             // if username already exsit then exit
-            if (s.Contains(";1" + usernamevalue + ";2"))
+            if (s.Contains("%USERNAME%" + usernamevalue + "%PASSWORD%"))
                 break;
 
             // -1 number of data
@@ -283,7 +297,7 @@ public class GameControl : MonoBehaviour
         if (numberdata == 0)
         {
             using StreamWriter file = File.AppendText(datalocation);
-            file.Write(";1" + usernamevalue + ";2" + passwordvalue + ";3x" + ";4x" + "\n");
+            file.Write("%USERNAME%" + usernamevalue + "%PASSWORD%" + passwordvalue + "%GAMES%x" + "%ACCURACY%x" + "/\n");
 
             // Update username and password data
             username = usernamevalue;

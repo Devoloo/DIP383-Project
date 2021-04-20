@@ -37,12 +37,23 @@ public class GameControl : MonoBehaviour
     // Data location
     private string datalocation = @"C:\Users\macha\Desktop\DIP383-Project\unityData\data.txt";
 
+    // Data online
+    private string url = "https://raw.githubusercontent.com/Mat-cell/DIP383-Project/main/unityData/data.txt";
+
+    [System.Obsolete]
+    private IEnumerator Extract()
+    {
+        WWW www = new WWW(url);
+        yield return www;
+    }
+
     // Player data
     private string username, password;
 
 
     /*-------------------------------------------------------------------------------------------------------------------------------*/
     // Start is called before the first frame update
+    [System.Obsolete]
     void Start()
     {
         cursorHotspot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
@@ -76,6 +87,9 @@ public class GameControl : MonoBehaviour
         // Hide actualScoreText
         actualScoreText.gameObject.SetActive(false);
         actualScoreText.text = "Score";
+
+        // Find online data
+        StartCoroutine(Extract());
     }
 
     // Update is called once per frame

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "958303763856",
+    "project_id": "database-581c3",
+    "storage_bucket": "database-581c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958303763856:android:0955d6172f90e160650715",
+        "android_client_info": {
+          "package_name": "com.devolo.database"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958303763856-bafc418179bbltk07qe7lislbrvcddfi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDe0tbCCjwznCs5RksU7w72uGaW5ZP9BY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958303763856-bafc418179bbltk07qe7lislbrvcddfi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
